@@ -30,6 +30,7 @@ static void createRecord(
     string const &recordNamePrefix,
     string const &properties)
 {
+    StandardPVFieldPtr standardPVField = getStandardPVField();
     string recordName = recordNamePrefix;
     PVStructurePtr pvStructure = standardPVField->scalar(scalarType,properties);
     PVRecordPtr pvRecord = PVRecord::create(recordName,pvStructure);
